@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aplicación oficial de GABBA GABBA RADIO y GABBA GABBA Fest">
+<title>Links | GABBA</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="shortcut icon" href="/assets/images/icon.png" type="image/png">
+<script>
+  if (localStorage.getItem('disableAnimations') === 'true') {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('no-animations');
+  });
+}
+</script>
+</head>
+<body class="links">
+  <video autoplay muted loop playsinline webkit-playsinline preload="auto" id="background-video">
+    <source src="assets/images/background.webm" type="video/webm" />
+  </video>
+  <div class="solid-bg"></div>
+<h2 class="links-title">TODOS NUESTROS LINKS</h2>
+<div style="display: flex; flex-direction: column; align-items: center;">
+<div class="link">
+  <a href="https://instagram.com/gabba.gabba.fest" target="_blank" rel="noopener noreferrer">
+    <img src="assets/images/instagram.png" alt="Logo de Instagram">
+    <h3>Instagram</h3>
+  </a>
+</div>
+<div class="link">
+  <a href="https://youtube.com/@gabbaradiook" target="_blank" rel="noopener noreferrer">
+    <img src="assets/images/youtube.png" alt="Logo de YouTube">
+    <h3>YouTube</h3>
+  </a>
+</div>
+<div class="link">
+  <a href="https://open.spotify.com/show/2US6Gd6PdTK1uuzH7npfgc" target="_blank" rel="noopener noreferrer">
+    <img src="assets/images/spotify.png" alt="Logo de Spotify">
+    <h3>Spotify</h3>
+  </a>
+</div>
+<div class="link">
+  <a href="https://www.whatsapp.com/channel/0029Vb0gqPdCRs1w6oI01i3E" target="_blank" rel="noopener noreferrer">
+    <img src="assets/images/whatsapp.png" alt="Logo de WhatsApp">
+    <h3>Canal de WhatsApp</h3>
+  </a>
+</div>
+<div class="link">
+  <span class="badge">NUEVO!</span>
+  <a href="https://gabbagabbaradio.netlify.app/contacto.html" target="_blank" rel="noopener noreferrer">
+    <img src="assets/images/headphones.png" alt="Logo">
+    <h3>¡Vení con tu banda a Gabba Gabba Radio!</h3>
+  </a>
+</div>
+</div>
+<nav>
+    <a href="index.html"><img src="assets/images/home.webp" alt="Inicio"></a>
+    <a href="pastevents.html"><img src="assets/images/calendar.png"  alt="Últimos eventos"></a>
+    <a href="links.html"><img src="assets/images/links.png" class="icon-active" alt="Todos nuestros links"></a>
+    <a href="settings.html"><img src="assets/images/settings.webp" alt="Opciones"></a>
+  </nav>
+  <div class="footer">
+    © 2025 FIESTA RAMONA
+  </div>
+<script>
+  if (localStorage.getItem('disableAnimations') === 'true') {
+    document.documentElement.classList.add('no-animations');
+  }
+</script>
+<script src="js/darkModeSettings.js"></script>
+  </body>
+</html>

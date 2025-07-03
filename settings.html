@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opciones | GABBA</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="shortcut icon" href="/assets/images/icon.png" type="image/png">
+</head>
+<body class="settings">
+  <div class="solid-bg"></div>
+  <video autoplay muted loop playsinline webkit-playsinline preload="auto" id="background-video">
+    <source src="assets/images/background.webm" type="video/webm" />
+  </video>
+<h2 class="settings-title" style="text-align: center; margin-bottom: 60px;" id="settings">OPCIONES</h2>
+<div class="settings-wrapper" id="settingsPage">
+  <label class="settings-item" for="notificationToggle">
+  <div class="settings-item-left">
+    <span>
+      <img src="https://img.icons8.com/?size=30&id=82754&format=png&color=000000" alt="Icono de notificación" class="settings-icon">
+    </span>
+    <span class="settings-text">Notificaciones</span>
+  </div>
+  <span class="switch">
+    <input type="checkbox" id="notificationToggle" />
+    <span class="slider round"></span>
+  </span>
+</label>
+<label class="settings-item" for="disableAnimations">
+  <div class="settings-item-left">
+    <span class="settings-text">Desactivar animación</span>
+  </div>
+    <span class="switch">
+    <input type="checkbox" id="disableAnimations">
+    <span class="slider"></span>
+</label>
+    <div class="settings-item" onclick="showDarkModeModal()">
+    <div class="settings-item-left">
+      <span>
+        <img src="https://img.icons8.com/?size=30&id=Y56jZNPHTK0X&format=png&color=000000" class="settings-icon" alt="Icono de modo oscuro">
+      </span>
+    <span class="settings-text">Modo oscuro</span>
+    </div>
+    <span class="settings-arrow">›</span>
+  </div>
+  <div class="settings-item" onclick="goToAboutPage()">
+    <div class="settings-item-left">
+      <span>
+        <img src="https://img.icons8.com/?size=30&id=82742&format=png&color=000000" alt="Icono de información" class="settings-icon">
+      </span>
+    <span class="settings-text">Acerca de</span>
+    </div>
+    <span class="settings-arrow">›</span>
+  </div>
+</div>
+<div id="settingsOverlay" class="settings-overlay hidden" onclick="closeDarkModeModal()"></div>
+<div id="darkModeModal" class="settings-bottom-sheet hidden">
+  <div class="settings-bottom-sheet-header">
+    <h3>Modo oscuro</h3>
+    <button class="settings-bottom-sheet-header-close"onclick="closeDarkModeModal()">✕</button>
+  </div>
+  <div class="settings-bottom-sheet-content">
+    <form id="darkModeForm">
+      <label class="darkmode-option">
+        <span>Encendido</span>
+        <input type="radio" name="theme" value="dark" checked onchange="setDarkMode(this.value)">
+      </label><br>
+
+      <label class="darkmode-option">
+        <span>Apagado</span>
+        <input type="radio" name="theme" value="light" onchange="setDarkMode(this.value)">
+      </label>
+    </form>
+  </div>
+</div>
+<div id="aboutPage" class="hidden">
+  <div class="about-page-header">
+  <h2>ACERCA DE</h2> <span class="settings-arrow" onclick="goBackToSettings()">↩</span>
+  </div>
+    <p><span style="font-family: Anta; font-size: 24px;">Gabba</span> es una app de código abierto. Su código fuente puede encontrarse en <a href="https://github.com/sebaa1/gabba">GitHub</a>.</p>
+  <details>
+    <summary><img src="https://img.icons8.com/?size=20&id=33039&format=png&color=000000" alt="Icono de AWS">Amazon Web Services</summary>
+    Esta aplicación utiliza <a href="https://aws.amazon.com/es/s3/" referrerpolicy="no-referrer" target="_blank">Amazon S3</a>, el servicio de almacenamiento en la nube de <span style="font-weight: bold;">Amazon Web Services</span> (AWS), para guardar archivos multimedia de forma segura.
+  </details>
+  <details>
+    <summary><img src="https://img.icons8.com/?size=20&id=WRRjYsSsuhp1&format=png&color=000000" alt="Icono de Apache Cordova">Apache Cordova</summary>
+    Esta aplicación fue desarrollada utilizando <a href="https://cordova.apache.org/" referrerpolicy="no-referrer" target="_blank">Apache Cordova</a>.
+  </details>
+  <details>
+    <summary><img src="https://img.icons8.com/?size=20&id=62452&format=png&color=000000" alt="Icono de Firebase">Firebase</summary>
+    El sistema de notificaciones push está gestionado por <a href="https://firebase.google.com/" referrerpolicy="no-referrer" target="_blank">Firebase</a> y su complemento <span style="font-weight: bold;">Cloud Messaging</span>, servicio de <span style="font-weight: bold;">Google</span>.
+  </details>
+  <details>
+    <summary><img src="https://cdn-front.freepik.com/favicons/favicon-96x96.png?w=96&v=2" style="width: 20px;" alt="Icono de Freepik">Freepik</summary>
+    El video de fondo fue obtenido de <a href="https://www.freepik.com/" referrerpolicy="no-referrer" target="_blank">Freepik</a>.
+  </details>
+  <details>
+    <summary><img src="https://img.icons8.com/?size=20&id=uY6QHPV8g5bd&format=png&color=000000" alt="Icono de Google Fonts">Google Fonts</summary>
+    Las fuentes <span style="font-family: Anta;">Anta</span>, <span style="font-family: Oswald;">Oswald</span> y <span style="font-family: Exo2;">Exo 2</span>, diseñadas por sus respectivos autores, fueron proporcionadas por <a href="https://fonts.google.com/" referrerpolicy="no-referrer" target="_blank">Google Fonts</a>:
+    <h4>Anta-Regular.ttf: Copyright 2019 The Anta Project Authors (<a href="https://github.com/Typedesigners/Anta-Regular">https://github.com/Typedesigners/Anta-Regular</a>)</h4>
+    <h4>Oswald.ttf: Copyright 2016 The Oswald Project Authors (<a href="https://github.com/googlefonts/OswaldFont" referrerpolicy="no-referrer" target="_blank">https://github.com/googlefonts/OswaldFont</a>)</h4>
+    <h4>Exo2.ttf: Copyright 2013 The Exo 2 Project Authors (<a href="https://github.com/googlefonts/Exo-2.0" referrerpolicy="no-referrer" target="_blank">https://github.com/googlefonts/Exo-2.0</a>)</h4>
+  </details>
+  <details style="margin-bottom: 50px;">
+    <summary><img src="https://img.icons8.com/?size=20&id=118523&format=png&color=000000" alt="Icono de Icons8">Icons8</summary>
+    Todos los iconos utilizados en la aplicación fueron facilitados gracias a <a href="https://icons8.com/" referrerpolicy="no-referrer" target="_blank">Icons8</a>.
+  </details>
+  <h3 style="font-size: 14px; text-align: center; color: #cac9c9c4;">Aplicación desarrollada y administrada por <span style="font-weight: bolder;">Sebastián Fraga</span></h3>
+  <a href="https://github.com/sebaa1" class="contact">CONTACTO</a>
+  </div>
+<nav id="navBar">
+    <a href="index.html"><img src="assets/images/home.webp" alt="Inicio"></a>
+    <a href="pastevents.html"><img src="assets/images/calendar.png" alt="Últimos eventos"></a>
+    <a href="links.html"><img src="assets/images/links.png" alt="Todos nuestros links"></a>
+    <a href="#"><img src="assets/images/settings.webp" alt="Opciones" class="icon-active"></a>
+  </nav>
+<div class="footer" style="margin-top: 140px;" id="footer">
+    © 2025 FIESTA RAMONA
+  </div>
+  <script>
+    const checkbox = document.getElementById('disableAnimations');
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const disabled = localStorage.getItem('disableAnimations') === 'true';
+    checkbox.checked = disabled;
+    applyAnimationSetting(disabled);
+  });
+
+  checkbox.addEventListener('change', () => {
+    const disabled = checkbox.checked;
+    localStorage.setItem('disableAnimations', disabled);
+    applyAnimationSetting(disabled);
+  });
+
+  function applyAnimationSetting(disabled) {
+    document.body.classList.toggle('no-animations', disabled);
+  }
+
+  </script>
+  <script>
+  document.querySelector('.contact').addEventListener('click', function(e) {
+  e.preventDefault();
+  window.open('https://github.com/sebaa1', '_blank');
+});
+</script>
+<script>
+  (() => {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else if (theme === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  })();
+</script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-messaging-compat.js"></script>
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getMessaging, getToken, deleteToken } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-messaging.js";
+
+  const firebaseConfig = { // PRIVADO-REEMPLAZAR
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
+  };
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const app = initializeApp(firebaseConfig);
+    const messaging = getMessaging(app);
+    const toggle = document.getElementById('notificationToggle');
+
+    const isDisabled = localStorage.getItem('notificationsDisabled');
+
+    if (isDisabled === 'true') {
+      toggle.checked = false;
+    } else {
+      toggle.checked = true;
+      localStorage.setItem('notificationsDisabled', 'false');
+
+      if (isDisabled === null) {
+        try {
+          const token = await getToken(messaging, {
+            vapidKey: "" // PRIVADO-REEMPLAZAR
+          });
+          console.log('Token generado al iniciar:', token);
+        } catch (e) {
+          console.error('Error al pedir token:', e);
+        }
+      }
+    }
+
+    toggle.addEventListener('change', async () => {
+      if (toggle.checked) {
+        try {
+          const token = await getToken(messaging, {
+            vapidKey: "" // PRIVADO-REEMPLAZAR
+          });
+          console.log('Notificaciones activadas:', token);
+          localStorage.setItem('notificationsDisabled', 'false');
+        } catch (e) {
+          console.error('No se pudo activar notificaciones:', e);
+        }
+      } else {
+        try {
+          const token = await getToken(messaging);
+          await deleteToken(messaging, token);
+          console.log('Notificaciones desactivadas.');
+          localStorage.setItem('notificationsDisabled', 'true');
+        } catch (e) {
+          console.error('Error al desactivar notificaciones:', e);
+        }
+      }
+    });
+  });
+</script>
+  <script src="js/darkModeSettings.js"></script>
+  <script src="js/about.js"></script>
+</body>
+</html>

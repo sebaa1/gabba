@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aplicación oficial de GABBA GABBA RADIO y GABBA GABBA FEST">
+<title>Inicio | GABBA</title>
+<script>
+(() => {
+  let theme = localStorage.getItem('theme');
+
+  if (!theme) {
+    theme = 'dark';
+    localStorage.setItem('theme', theme);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add(theme + '-mode');
+  });
+})();
+</script>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="shortcut icon" href="/assets/images/icon.png" type="image/png">
+<script>
+  if (localStorage.getItem('disableAnimations') === 'true') {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('no-animations');
+  });
+}
+</script>
+</head>
+<body>
+  <video autoplay muted loop playsinline webkit-playsinline preload="auto" id="background-video">
+    <source src="assets/images/background.webm" type="video/webm" />
+  </video>
+  <div class="solid-bg"></div>
+<header class="header">
+    <img src="assets/images/icon.png" alt="Logo de GABBA" style="width: 120px; height: auto;">
+    <h1>GABBA</h1>
+</header>
+<h2 class="title">PROGRAMAS</h2>
+<div class="search-container">
+  <input type="text" id="radioSearch" placeholder="Buscar programa..." />
+  <button id="radioClear" title="Borrar búsqueda"><span class="icon"></span></button>
+</div>
+<div class="video-scroll-wrapper">
+  <div class="video-scroll" id="radio-container">
+  </div>
+</div>
+
+<h2 class="title">VIDEOS</h2>
+<div class="search-container">
+  <input type="text" id="videoSearch" placeholder="Buscar video..." />
+  <button id="videoClear" title="Borrar búsqueda"><span class="icon"></span></button>
+</div>
+<div class="video-scroll-wrapper">
+  <div class="video-scroll" id="video-container">
+  </div>
+</div>
+
+  <h2 class="title">PRÓXIMA FECHA</h2>
+  <div class="event-section" id="event-container">
+  </div>
+  <div class="image-overlay" id="imageOverlay">
+  <span class="close-btn" id="closeBtn">×</span>
+  <img src="" alt="Imagen ampliada" class="overlay-img" id="overlayImg">
+</div>
+
+<nav>
+    <a href=#><img src="assets/images/home.webp" alt="Inicio" class="icon-active"></a>
+    <a href="pastevents.html"><img src="assets/images/calendar.png" alt="Últimos eventos"></a>
+    <a href="links.html"><img src="assets/images/links.png" alt="Todos nuestros links"></a>
+    <a href="settings.html"><img src="assets/images/settings.webp" alt="Opciones"></a>
+  </nav>
+
+  <div class="footer">
+    © 2025 FIESTA RAMONA
+  </div>
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/radio.js"></script>
+  <script type="text/javascript" src="/js/videos.js"></script>
+  <script type="text/javascript" src="/js/eventos.js"></script>
+  <script type="text/javascript" src="/js/overlay.js"></script>
+  <script src="js/darkModeSettings.js"></script>
+
+  </body>
+</html>
