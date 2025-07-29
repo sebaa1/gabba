@@ -32,7 +32,7 @@ try {
     ${evento.nombre}
 </h3>
 <p class="past-events-date">${evento.fecha}</p>
-    ${evento.videoResumen ? `<a href="${evento.videoResumen}" target="_blank" title="Ver video resumen" style=""><img src="https://img.icons8.com/?size=100&id=31939&format=png&color=000000" class="past-events-icon"></a>` : ''}
+    ${evento.videoResumen ? `<a href="${evento.videoResumen}" target="_blank" title="Ver video resumen" style="display:flex; align-items: center; gap: 10px; text-decoration: none; font-family:'Oswald'";><img src="https://img.icons8.com/?size=100&id=31939&format=png&color=000000" class="past-events-icon"> <p>VER RESUMEN EN YOUTUBE</p></a>` : ''}
 <p class="past-events-description">${evento.descripcion}</p>
 ${galeriaHTML}
 `;

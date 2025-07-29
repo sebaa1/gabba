@@ -25,11 +25,13 @@ async function cargarProgramas() {
             
             const item = document.createElement("div");
             item.classList.add("video-item");
+            item.setAttribute("data-temporada", programa.temporada);
+            item.setAttribute("data-tags", programa.etiquetas || '');
 
             item.innerHTML = `
                 <a href="${programa.url}">
                     <div class="duration">${programa.duracion}</div>
-                    <img src="${programa.imagen}" alt="${programa.titulo}">
+                    <img src="${programa.imagen}" alt="${programa.titulo}" loading="lazy">
                 </a>
                 <div class="video-title">${programa.titulo}</div>
             `;

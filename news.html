@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="description" content="Aplicación oficial de GABBA GABBA RADIO y GABBA GABBA Fest">
+<title>Noticias | GABBA</title>
+<script src="js/theme-init.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="shortcut icon" href="assets/images/icon.png" type="image/png">
+</head>
+<body class="news" style="padding: 25px;">
+    <video autoplay="true" muted loop playsinline webkit-playsinline preload="auto" id="background-video">
+        <source src="assets/images/background.webm" type="video/webm" />
+    </video>
+<div class="solid-bg"></div>
+<h2 class="links-title">NOTICIAS</h2>
+    <div class="news-wrapper">
+        <div class="news-header">
+            <h3>GABBA NEWS</h3>
+            <img src="assets/images/news.webp" alt="Noticias">
+        </div>
+    </div>
+<nav>
+    <a href="pastevents.html"><img src="assets/images/calendar.webp" alt="Últimos eventos"></a>
+    <a><img src="assets/images/news.webp" alt="Noticias" class="icon-active"></a>
+    <a href="index.html"><img src="assets/images/home.webp" alt="Inicio" style="scale: 1.3"></a>
+    <a href="links.html"><img src="assets/images/links.webp" alt="Todos nuestros links"></a>
+    <a href="settings.html"><img src="assets/images/settings.webp" alt="Opciones"></a>
+</nav>
+<div class="footer">
+    © 2025 FIESTA RAMONA
+</div>
+<script>
+    if (localStorage.getItem('disableAnimations') === 'true') {
+        document.documentElement.classList.add('no-animations');
+}
+</script>
+<script src="js/darkModeSettings.js"></script>
+<script src="js/app-links.js"></script>
+<script src="js/news.js"></script>
+<script src="js/firebase-config-production.js"></script>
+<script src="js/cordova-production.js"></script>
+</body>
+</html>

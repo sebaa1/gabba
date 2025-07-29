@@ -26,6 +26,8 @@ async function cargarProgramas() {
             
             const item = document.createElement("div");
             item.classList.add("video-item");
+            item.setAttribute("data-temporada", programa.temporada);
+            item.setAttribute("data-tags", programa.etiquetas || '');
 
             item.innerHTML = `
                 <a href="${programa.url}">

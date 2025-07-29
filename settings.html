@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Opciones | GABBA</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>Opciones | GABBA</title>
+    <script src="js/theme-init.js"></script>
+    <script src="js/firebase-config-production.js">
+    </script>
+  <script src="js/cordova-production.js"></script>
 <link rel="stylesheet" href="css/styles.css">
-<link rel="shortcut icon" href="/assets/images/icon.png" type="image/png">
+<link rel="shortcut icon" href="assets/images/icon.png" type="image/png">
 </head>
 <body class="settings">
   <div class="solid-bg"></div>
-  <video autoplay muted loop playsinline webkit-playsinline preload="auto" id="background-video">
+  <video autoplay="true" muted loop playsinline webkit-playsinline preload="auto" id="background-video">
     <source src="assets/images/background.webm" type="video/webm" />
   </video>
-<h2 class="settings-title" style="text-align: center; margin-bottom: 60px;" id="settings">OPCIONES</h2>
+<h2 class="settings-title" id="settings">OPCIONES</h2>
 <div class="settings-wrapper" id="settingsPage">
   <label class="settings-item" for="notificationToggle">
   <div class="settings-item-left">
-    <span>
-      <img src="https://img.icons8.com/?size=30&id=82754&format=png&color=000000" alt="Icono de notificación" class="settings-icon">
-    </span>
     <span class="settings-text">Notificaciones</span>
   </div>
   <span class="switch">
@@ -26,6 +29,8 @@
     <span class="slider round"></span>
   </span>
 </label>
+
+
 <label class="settings-item" for="disableAnimations">
   <div class="settings-item-left">
     <span class="settings-text">Desactivar animación</span>
@@ -33,22 +38,23 @@
     <span class="switch">
     <input type="checkbox" id="disableAnimations">
     <span class="slider"></span>
+    </span>
 </label>
     <div class="settings-item" onclick="showDarkModeModal()">
     <div class="settings-item-left">
-      <span>
-        <img src="https://img.icons8.com/?size=30&id=Y56jZNPHTK0X&format=png&color=000000" class="settings-icon" alt="Icono de modo oscuro">
-      </span>
     <span class="settings-text">Modo oscuro</span>
     </div>
-    <span class="settings-arrow">›</span>
+    <span class="settings-arrow" id="darkModeArrow">›</span>
   </div>
   <div class="settings-item" onclick="goToAboutPage()">
     <div class="settings-item-left">
-      <span>
-        <img src="https://img.icons8.com/?size=30&id=82742&format=png&color=000000" alt="Icono de información" class="settings-icon">
-      </span>
     <span class="settings-text">Acerca de</span>
+    </div>
+    <span class="settings-arrow">›</span>
+  </div>
+  <div class="settings-item" onclick='window.open("https://gabbaprivacy.netlify.app/", "_blank")'>
+    <div class="settings-item-left">
+      <span class="settings-text">Política de privacidad</span>
     </div>
     <span class="settings-arrow">›</span>
   </div>
@@ -57,27 +63,31 @@
 <div id="darkModeModal" class="settings-bottom-sheet hidden">
   <div class="settings-bottom-sheet-header">
     <h3>Modo oscuro</h3>
-    <button class="settings-bottom-sheet-header-close"onclick="closeDarkModeModal()">✕</button>
+    <button class="settings-bottom-sheet-header-close"onclick="closeDarkModeModal()">X</button>
   </div>
   <div class="settings-bottom-sheet-content">
     <form id="darkModeForm">
+      <div class="darkmode-wrapper">
       <label class="darkmode-option">
         <span>Encendido</span>
         <input type="radio" name="theme" value="dark" checked onchange="setDarkMode(this.value)">
-      </label><br>
-
+      </label>
+      </div><br>
+      <div class="darkmode-wrapper">
       <label class="darkmode-option">
         <span>Apagado</span>
         <input type="radio" name="theme" value="light" onchange="setDarkMode(this.value)">
       </label>
+      </div>
     </form>
+
   </div>
 </div>
 <div id="aboutPage" class="hidden">
   <div class="about-page-header">
-  <h2>ACERCA DE</h2> <span class="settings-arrow" onclick="goBackToSettings()">↩</span>
+  <span class="about-arrow" onclick="goBackToSettings()">‹</span> <h2>ACERCA DE</h2> 
   </div>
-    <p><span style="font-family: Anta; font-size: 24px;">Gabba</span> es una app de código abierto. Su código fuente puede encontrarse en <a href="https://github.com/sebaa1/gabba">GitHub</a>.</p>
+    <p style="text-align: center;"><span style="font-family: Anta; font-size: 24px;">GABBA</span> es una app de código abierto. Su código fuente puede encontrarse en <a href="https://github.com/sebaa1/gabba">GitHub</a>.</p>
   <details>
     <summary><img src="https://img.icons8.com/?size=20&id=33039&format=png&color=000000" alt="Icono de AWS">Amazon Web Services</summary>
     Esta aplicación utiliza <a href="https://aws.amazon.com/es/s3/" referrerpolicy="no-referrer" target="_blank">Amazon S3</a>, el servicio de almacenamiento en la nube de <span style="font-weight: bold;">Amazon Web Services</span> (AWS), para guardar archivos multimedia de forma segura.
@@ -106,18 +116,19 @@
     Todos los iconos utilizados en la aplicación fueron facilitados gracias a <a href="https://icons8.com/" referrerpolicy="no-referrer" target="_blank">Icons8</a>.
   </details>
   <h3 style="font-size: 14px; text-align: center; color: #cac9c9c4;">Aplicación desarrollada y administrada por <span style="font-weight: bolder;">Sebastián Fraga</span></h3>
-  <a href="https://github.com/sebaa1" class="contact">CONTACTO</a>
+  <a href="mailto:fragasebastian1@gmail.com" class="contact">CONTACTO</a>
   </div>
 <nav id="navBar">
-    <a href="index.html"><img src="assets/images/home.webp" alt="Inicio"></a>
-    <a href="pastevents.html"><img src="assets/images/calendar.png" alt="Últimos eventos"></a>
-    <a href="links.html"><img src="assets/images/links.png" alt="Todos nuestros links"></a>
-    <a href="#"><img src="assets/images/settings.webp" alt="Opciones" class="icon-active"></a>
-  </nav>
-<div class="footer" style="margin-top: 140px;" id="footer">
+    <a href="pastevents.html"><img src="assets/images/calendar.webp" alt="Últimos eventos"></a>
+    <a href="news.html"><img src="assets/images/news.webp" alt="Noticias"></a>
+    <a href="index.html"><img src="assets/images/home.webp" alt="Inicio" style="scale: 1.3;"></a>
+    <a href="links.html"><img src="assets/images/links.webp" alt="Todos nuestros links"></a>
+    <a><img src="assets/images/settings.webp" alt="Opciones" class="icon-active"></a>
+</nav>
+<div class="footer" style="margin-top: 60px;" id="footer">
     © 2025 FIESTA RAMONA
   </div>
-  <script>
+<script>
     const checkbox = document.getElementById('disableAnimations');
 
   window.addEventListener('DOMContentLoaded', () => {
@@ -136,89 +147,32 @@
     document.body.classList.toggle('no-animations', disabled);
   }
 
-  </script>
-  <script>
-  document.querySelector('.contact').addEventListener('click', function(e) {
-  e.preventDefault();
-  window.open('https://github.com/sebaa1', '_blank');
-});
-</script>
-<script>
-  (() => {
-    const theme = localStorage.getItem('theme');
-    if (theme === 'dark') {
-      document.body.classList.add('dark-mode');
-    } else if (theme === 'light') {
-      document.body.classList.add('light-mode');
-    }
-  })();
-</script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-messaging-compat.js"></script>
-  <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-  import { getMessaging, getToken, deleteToken } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-messaging.js";
+  const notificationToggle = document.getElementById('notificationToggle');
+  if (notificationToggle) {
+    const notificationsDisabled = localStorage.getItem('notificationsDisabled') === 'true';
+    notificationToggle.checked = !notificationsDisabled;
 
-  const firebaseConfig = { // PRIVADO-REEMPLAZAR
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: "",
-    measurementId: ""
-  };
-
-  document.addEventListener("DOMContentLoaded", async () => {
-    const app = initializeApp(firebaseConfig);
-    const messaging = getMessaging(app);
-    const toggle = document.getElementById('notificationToggle');
-
-    const isDisabled = localStorage.getItem('notificationsDisabled');
-
-    if (isDisabled === 'true') {
-      toggle.checked = false;
-    } else {
-      toggle.checked = true;
-      localStorage.setItem('notificationsDisabled', 'false');
-
-      if (isDisabled === null) {
-        try {
-          const token = await getToken(messaging, {
-            vapidKey: "" // PRIVADO-REEMPLAZAR
-          });
-          console.log('Token generado al iniciar:', token);
-        } catch (e) {
-          console.error('Error al pedir token:', e);
-        }
-      }
-    }
-
-    toggle.addEventListener('change', async () => {
-      if (toggle.checked) {
-        try {
-          const token = await getToken(messaging, {
-            vapidKey: "" // PRIVADO-REEMPLAZAR
-          });
-          console.log('Notificaciones activadas:', token);
-          localStorage.setItem('notificationsDisabled', 'false');
-        } catch (e) {
-          console.error('No se pudo activar notificaciones:', e);
-        }
-      } else {
-        try {
-          const token = await getToken(messaging);
-          await deleteToken(messaging, token);
-          console.log('Notificaciones desactivadas.');
-          localStorage.setItem('notificationsDisabled', 'true');
-        } catch (e) {
-          console.error('Error al desactivar notificaciones:', e);
+    notificationToggle.addEventListener('change', () => {
+      const isEnabled = notificationToggle.checked;
+      localStorage.setItem('notificationsDisabled', isEnabled ? 'false' : 'true');
+      
+      if (window.FirebasePlugin) {
+        if (isEnabled) {
+          FirebasePlugin.subscribe('general');
+        } else {
+          FirebasePlugin.unsubscribe('general');
         }
       }
     });
+  }
+
+</script>
+<script src="js/darkModeSettings.js"></script>
+<script src="js/about.js"></script>
+<script>
+  document.addEventListener('cordova-ready', function() {
+    console.log('Cordova y Firebase están listos desde settings.html');
   });
 </script>
-  <script src="js/darkModeSettings.js"></script>
-  <script src="js/about.js"></script>
 </body>
 </html>

@@ -46,7 +46,7 @@ async function cargarEventos() {
                 <div class="event-date">${evento.fecha}, ${evento.hora}</div>
                 <div class="event-location">${evento.lugar}
                     <a href="${evento.ubicacion}" target="_blank">
-                        <img class="event-location-info" src="../assets/images/location.png" style="width: 20px; height: 20px; border-radius: 50%; border:none; background: #54fb54; padding: 5px;"alt="Ubicación">
+                        <img class="event-location-info" src="../assets/images/location.webp" style="width: 20px; height: 20px; border-radius: 50%; border: 3px solid #b4f00dff; background: #4fe74fff; padding: 5px;"alt="Ubicación">
                     </a>
                 </div>
             `;
@@ -59,7 +59,7 @@ async function cargarEventos() {
             boton.href = evento.link_compra;
             boton.classList.add('event-button');
             boton.target = "_blank";
-            boton.innerText = "COMPRAR ENTRADAS";
+            boton.innerText = evento.texto_boton || "COMPRAR ENTRADAS";
             container.appendChild(boton);
         });
 

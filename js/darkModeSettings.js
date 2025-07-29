@@ -19,13 +19,17 @@ document.addEventListener("DOMContentLoaded", () => {
 function showDarkModeModal() {
     document.getElementById("settingsOverlay").classList.remove("hidden");
     const modal = document.getElementById("darkModeModal");
+    const arrow = document.getElementById("darkModeArrow");
     modal.classList.remove("hidden");
+    arrow.classList.add("rotated");
     setTimeout(() => modal.classList.add("show"), 10);
   }
 
   function closeDarkModeModal() {
     const modal = document.getElementById("darkModeModal");
+    const arrow = document.getElementById("darkModeArrow");
     modal.classList.remove("show");
+    arrow.classList.remove("rotated");
     document.getElementById("settingsOverlay").classList.add("hidden");
     setTimeout(() => modal.classList.add("hidden"), 300);
   }

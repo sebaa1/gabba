@@ -2,21 +2,17 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
 <meta name="description" content="Aplicación oficial de GABBA GABBA RADIO y GABBA GABBA Fest">
 <title>Últimos eventos | GABBA</title>
+<script src="js/theme-init.js"></script>
 <link rel="stylesheet" href="css/styles.css">
-<link rel="shortcut icon" href="/assets/images/icon.png" type="image/png">
-<script>
-  if (localStorage.getItem('disableAnimations') === 'true') {
-  document.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('no-animations');
-  });
-}
-</script>
+<link rel="icon" href="assets/images/icon.png" type="image/png">
 </head>
 <body class="past-events">
-  <video autoplay muted loop playsinline webkit-playsinline preload="auto" id="background-video">
+  <video autoplay="true" muted loop playsinline webkit-playsinline preload="auto" id="background-video">
     <source src="assets/images/background.webm" type="video/webm" />
   </video>
   <div class="solid-bg"></div>
@@ -28,22 +24,26 @@
     <img src="" alt="Imagen ampliada" class="overlay-img" id="overlayImg">
   </div>
 <nav>
-    <a href="index.html"><img src="assets/images/home.webp" alt="Inicio"></a>
-    <a href=#><img src="assets/images/calendar.png" class="icon-active" alt="Últimos eventos"></a>
-    <a href="links.html"><img src="assets/images/links.png" alt="Todos nuestros links"></a>
+    <a><img src="assets/images/calendar.webp" alt="Últimos eventos" class="icon-active"></a>
+    <a href="news.html"><img src="assets/images/news.webp" alt="Noticias"></a>
+    <a href="index.html"><img src="assets/images/home.webp" alt="Inicio" style="scale: 1.3"></a>
+    <a href="links.html"><img src="assets/images/links.webp" alt="Todos nuestros links"></a>
     <a href="settings.html"><img src="assets/images/settings.webp" alt="Opciones"></a>
-  </nav>
+</nav>
 
   <div class="footer">
     © 2025 FIESTA RAMONA
   </div>
   <script src="js/overlay.js"></script>
   <script src="js/pastevents.js"></script>
+  <script src="js/app-links.js"></script>
   <script>
   if (localStorage.getItem('disableAnimations') === 'true') {
     document.documentElement.classList.add('no-animations');
   }
 </script>
 <script src="js/darkModeSettings.js"></script>
+<script src="js/firebase-config-production.js"></script>
+<script src="js/cordova-production.js"></script>
   </body>
 </html>
